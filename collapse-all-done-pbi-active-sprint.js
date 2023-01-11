@@ -1,1 +1,1 @@
-Array.from($('.ghx-swimlane-header')).filter(x => $(".ghx-info > .jira-issue-status-lozenge-done", x).length === 1).forEach(x => $(".aui-icon", x).click());
+$('.ghx-swimlane:not(.ghx-closed) > .ghx-swimlane-header.ghx-done .aui-icon').click();

@@ -1,1 +1,1 @@
-$('.ghx-swimlane-header [aria-expanded="false"] .aui-iconfont-expanded').click();
+$('.ghx-swimlane.ghx-closed .aui-icon').click();
