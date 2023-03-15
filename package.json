@@ -1,0 +1,8 @@
+{
+  "name": "bookmarklets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/francescoferraioli/bookmarklets.git",
+  "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
+  "license": "MIT"
+}
