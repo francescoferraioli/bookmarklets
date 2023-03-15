@@ -1,1 +1,1 @@
-cat $1/$2.js | yarn --silent bookmarklet - | pbcopy
+cat $1 | yarn --silent bookmarklet - | pbcopy
