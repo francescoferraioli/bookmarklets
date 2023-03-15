@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "https://github.com/francescoferraioli/bookmarklets.git",
   "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bookmarklet": "^3.0.0"
+  }
 }
