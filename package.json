@@ -6,6 +6,7 @@
   "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
   "license": "MIT",
   "dependencies": {
-    "bookmarklet": "^3.0.0"
+    "bookmarklet": "^3.0.0",
+    "hbs-cli": "^1.4.1"
   }
 }
