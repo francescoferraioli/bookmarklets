@@ -1,5 +1,5 @@
 Array.from(document.querySelectorAll(".jira-issue-status-lozenge"))
-  .filter(x => x.textContent === "$STATUS")
+  .filter(x => x.textContent === {{ status }})
   .map(x => x.closest(".ghx-swimlane-header")
   .querySelector(".ghx-expander"))
   .forEach(x => x.click())
