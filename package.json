@@ -5,6 +5,11 @@
   "repository": "https://github.com/francescoferraioli/bookmarklets.git",
   "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "sh scripts/build.sh",
+    "handlebars": "sh scripts/hbs.sh",
+    "generate": "sh scripts/generate.sh"
+  },
   "dependencies": {
     "bookmarklet": "^3.0.0",
     "hbs-cli": "^1.4.1"

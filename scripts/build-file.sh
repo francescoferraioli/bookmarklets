@@ -1,2 +1,2 @@
-FILE_NAME=$(echo $1 | sed 's/\//__/g' | sed 's/.js$/.hbs/')
-cp src/$1 dist/$FILE_NAME
+FILE_NAME=$(scripts/convert-filename.sh $1)
+cp $1 dist/$FILE_NAME
