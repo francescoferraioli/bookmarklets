@@ -1,5 +1,4 @@
 FILE_NAME=$(scripts/convert-filename.sh $1)
-echo "function ffBookmarkletRun() {"
+echo "(() => {"
 yarn --silent handlebars dist/$FILE_NAME
-echo "}"
-echo "ffBookmarkletRun();"
+echo "})()"
