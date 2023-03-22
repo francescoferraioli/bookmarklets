@@ -1,2 +1,5 @@
-FILE_NAME=$(echo $1 | sed 's/\//__/g' | sed 's/.js$/.hbs/')
-cp src/$1 dist/$FILE_NAME
+rm -rf dist
+
+mkdir dist
+
+find ./src -type f | cut -d '/' -f3- | xargs -n 1 scripts/build-file.sh
