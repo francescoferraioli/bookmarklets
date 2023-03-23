@@ -8,6 +8,7 @@
   "scripts": {
     "build": "sh scripts/build.sh",
     "handlebars": "sh scripts/hbs.sh",
+    "compose": "sh scripts/compose.sh",
     "generate": "sh scripts/generate.sh"
   },
   "dependencies": {
