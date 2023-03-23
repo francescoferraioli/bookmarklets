@@ -1,4 +1,4 @@
 # bookmarklets
 
-1. Run `./bookmarklet.sh %FILE%`
+1. Run `yarn generate %FILE%`
 2. Paste as the URL of a new bookmark
