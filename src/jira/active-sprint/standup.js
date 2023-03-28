@@ -6,3 +6,4 @@ function closeAllOfStatus(status) {
 
 closeAllOfStatus("TODO");
 closeAllOfStatus("DONE");
+closeAllOfStatus("REJECTED");
