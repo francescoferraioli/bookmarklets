@@ -10,11 +10,16 @@
     "handlebars": "sh scripts/hbs.sh",
     "compose": "sh scripts/compose.sh",
     "generate": "sh scripts/generate.sh",
+    "ts-generate": "sh scripts/ts-generate.sh",
     "copy-to-clipboard": "sh scripts/copy-to-clipboard.sh",
     "console-log": "sh scripts/console-log.sh"
   },
   "dependencies": {
     "bookmarklet": "^3.0.0",
+    "esbuild": "^0.17.17",
     "hbs-cli": "^1.4.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
   }
 }
