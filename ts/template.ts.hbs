@@ -1,5 +1,21 @@
-import { {{ func }} } from "./{{ file }}";
+import { {{ func }} } from "./{{ coalesce file func }}";
 
 (async () => {
-  await {{ func }}();
+  let value = await {{ func }}();
+
+  {{#if json}}
+  value = JSON.stringify(value, undefined, 2);
+  {{/if}}
+
+  {{#if console}}
+  console.log(value);
+  {{/if}}
+
+  {{#if alert}}
+  alert(value);
+  {{/if}}
+
+  {{#if clipboard}}
+  navigator.clipboard.writeText(output);
+  {{/if}}
 })();
