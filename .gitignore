@@ -3,3 +3,6 @@ ignore/
 node_modules/
 
 dist/
+
+ts/data.json
+ts/template.ts
