@@ -12,7 +12,10 @@
     "generate": "sh scripts/generate.sh",
     "ts-generate": "sh scripts/ts-generate.sh",
     "copy-to-clipboard": "sh scripts/copy-to-clipboard.sh",
-    "console-log": "sh scripts/console-log.sh"
+    "console-log": "sh scripts/console-log.sh",
+    "lint": "eslint --ext .ts .",
+    "prettify": "prettier **/*.ts --write",
+    "prepare": "husky install"
   },
   "dependencies": {
     "bookmarklet": "^3.0.0",
@@ -20,6 +23,22 @@
     "hbs-cli": "^1.4.1"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.32.0",
+    "@typescript-eslint/parser": "^5.32.0",
+    "eslint": "^8.21.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
     "typescript": "^5.0.4"
+  },
+  "lint-staged": {
+    "*.ts": "eslint --cache --fix"
   }
 }
