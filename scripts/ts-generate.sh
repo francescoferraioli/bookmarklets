@@ -13,6 +13,9 @@ do
   JSON="${JSON}
   \"${!i}\": \"${!j}\","
 done
+
+FILE=$(echo "$1" | sed 's/^ts\///' | sed 's/\.ts$//')
+
 JSON="${JSON}
 \"file\": \"$FILE\"
 }"
