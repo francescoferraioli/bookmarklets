@@ -18,6 +18,6 @@ import { {{ func }} } from "./{{ coalesce file func }}";
   {{/if}}
 
   {{#if clipboard}}
-  navigator.clipboard.writeText(output);
+  navigator.clipboard.writeText(value);
   {{/if}}
 })();
