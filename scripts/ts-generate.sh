@@ -14,7 +14,7 @@ do
   \"${!i}\": \"${!j}\","
 done
 JSON="${JSON}
-\"func\": \"$1\"
+\"file\": \"$FILE\"
 }"
 
 echo $JSON > ./ts/data.json

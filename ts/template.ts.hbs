@@ -1,9 +1,9 @@
 /* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { {{ func }} } from "./{{ coalesce file func }}";
+import fn from "./{{ file }}";
 
 (async () => {
-  let value = await {{ func }}();
+  let value = await fn();
 
   {{#if json}}
   value = JSON.stringify(value, undefined, 2);
