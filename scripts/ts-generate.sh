@@ -1,17 +1,25 @@
 set -e
 
-if [ `expr $# % 2` == 0 ]
-then
-  echo "Incorrect number of arguments. It needs to be odd"
-	exit 1
-fi
-
 JSON="{"
-for i in $(seq 2 2 $#)
+for i in ${@:2}
 do
-  j=`expr $i + 1`
+  if ! [[ $i =~ ^-- ]]; then
+    continue
+  fi
+
+  if [[ $i =~ ^--- ]]; then
+    continue
+  fi
+
+  KEY=$(echo "$i" | sed 's/^--//' | sed 's/=.*$//')
+
+  VALUE="true"
+  if [[ $i =~ = ]]; then
+    VALUE=$(echo "$i" | sed 's/^.*=//')
+  fi
+
   JSON="${JSON}
-  \"${!i}\": \"${!j}\","
+  \"$KEY\": \"$VALUE\","
 done
 
 FILE=$(echo "$1" | sed 's/^ts\///' | sed 's/\.ts$//')
