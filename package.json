@@ -6,7 +6,7 @@
   "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "ts-generate": "sh scripts/ts-generate.sh",
+    "generate": "sh scripts/generate.sh",
     "lint": "eslint --ext .ts .",
     "prettify": "prettier **/*.ts --write",
     "prepare": "husky install"
