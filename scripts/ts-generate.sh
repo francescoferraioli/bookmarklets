@@ -22,15 +22,15 @@ do
   \"$KEY\": \"$VALUE\","
 done
 
-FILE=$(echo "$1" | sed 's/^ts\///' | sed 's/\.ts$//')
+FILE=$(echo "$1" | sed 's/^src\///' | sed 's/\.ts$//')
 
 JSON="${JSON}
 \"file\": \"$FILE\"
 }"
 
-echo $JSON > ./ts/data.json
+echo $JSON > ./src/data.json
 
-yarn --silent hbs -D ./ts/data.json -H ./hbs/helpers/*.js ./ts/template.ts.hbs -s > ./ts/template.ts
-yarn --silent esbuild ./ts/template.ts --bundle | yarn --silent bookmarklet - | pbcopy
+yarn --silent hbs -D ./src/data.json -H ./hbs/helpers/*.js ./src/template.ts.hbs -s > ./src/template.ts
+yarn --silent esbuild ./src/template.ts --bundle | yarn --silent bookmarklet - | pbcopy
 
-rm ./ts/data.json ./ts/template.ts
+rm ./src/data.json ./src/template.ts
