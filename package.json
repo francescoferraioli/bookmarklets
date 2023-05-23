@@ -6,13 +6,7 @@
   "author": "Francesco Ferraioli <francesco.ferraioli@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "build": "sh scripts/build.sh",
-    "handlebars": "sh scripts/hbs.sh",
-    "compose": "sh scripts/compose.sh",
-    "generate": "sh scripts/generate.sh",
     "ts-generate": "sh scripts/ts-generate.sh",
-    "copy-to-clipboard": "sh scripts/copy-to-clipboard.sh",
-    "console-log": "sh scripts/console-log.sh",
     "lint": "eslint --ext .ts .",
     "prettify": "prettier **/*.ts --write",
     "prepare": "husky install"
