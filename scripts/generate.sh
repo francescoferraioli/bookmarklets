@@ -28,9 +28,8 @@ JSON="${JSON}
 \"file\": \"$FILE\"
 }"
 
-echo $JSON > ./src/data.json
+mkdir -p dist
+echo $JSON > ./dist/data.json
 
-yarn --silent hbs -D ./src/data.json -H ./hbs/helpers/*.js ./src/template.ts.hbs -s > ./src/template.ts
-yarn --silent esbuild ./src/template.ts --bundle | yarn --silent bookmarklet - | pbcopy
-
-rm ./src/data.json ./src/template.ts
+yarn --silent hbs -D ./dist/data.json -H ./hbs/helpers/*.js ./src/template.ts.hbs -s > ./dist/template.ts
+yarn --silent esbuild ./dist/template.ts --bundle | yarn --silent bookmarklet - | pbcopy
