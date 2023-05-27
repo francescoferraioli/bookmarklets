@@ -47,3 +47,7 @@ export async function wait(timeout: number) {
     setTimeout(r, timeout);
   });
 }
+
+export function reverse<T>(arr: T[]): T[] {
+  return [...arr].reverse();
+}
