@@ -5,29 +5,34 @@ import {
 
 function getAllHistoryEntries() {
   return Array.from(
-    document.querySelectorAll(
+    document.querySelectorAll<HTMLDivElement>(
       '[data-testid="issue-history.ui.feed-container"] > div'
     )
   );
 }
 
-function getAllStateTransitionsInHistoryEntry(x) {
+function getAllStateTransitionsInHistoryEntry(x: Element) {
   return Array.from(
-    x.querySelectorAll(
+    x.querySelectorAll<HTMLElement>(
       '[data-testid="common.components.status-lozenge.status-lozenge"]'
     )
   );
 }
 
-function getDateTimeOfHistoryEntry(x) {
-  return x.querySelector(
+function getDateTimeOfHistoryEntry(x: Element) {
+  return x.querySelector<HTMLSpanElement>(
     '[data-testid="issue-history.ui.feed-container"] > div > div:nth-child(2) > div > span:last-child'
-  ).innerText;
+  )!.innerText;
 }
 
-function getDateTimeFromTransition(firstLast, fromTo, status) {
-  const getFromTo = fromTo === "from" ? (x) => x[0] : (x) => x.reverse()[0];
-  const getFirstLast =
+function getDateTimeFromTransition(
+  firstLast: string,
+  fromTo: string,
+  status: string
+) {
+  const getFromTo: (x: HTMLElement[]) => HTMLElement =
+    fromTo === "from" ? (x) => x[0] : (x) => x.reverse()[0];
+  const getFirstLast: (x: HTMLElement[]) => HTMLElement =
     firstLast === "first" ? (x) => x.reverse()[0] : (x) => x[0];
 
   const statusTransitions = getAllHistoryEntries().filter(
@@ -47,21 +52,28 @@ function getDateTimeLastToDone() {
   return getDateTimeFromTransition("last", "to", "DONE");
 }
 
-function parseDateTime(s) {
+function parseDateTime(s: string) {
   const { month, day, year, hr, min, amPm } = s.match(
     /^(?<month>\S+) (?<day>\d+), (?<year>\d+) at (?<hr>\d+):(?<min>\d+) (?<amPm>AM|PM)$/
-  ).groups;
+  )!.groups! as unknown as {
+    month: string;
+    day: number;
+    year: number;
+    hr: number;
+    min: number;
+    amPm: string;
+  };
   return new Date(
     year,
     getMonthIndexFromString(month),
     day,
-    parseInt(hr, 10) + (amPm.toLowerCase() === "am" ? 0 : 12),
+    hr + (amPm.toLowerCase() === "am" ? 0 : 12),
     min,
     0
   );
 }
 
-function getMonthIndexFromString(x) {
+function getMonthIndexFromString(x: string) {
   return new Date(Date.parse(`${x} 1, 2012`)).getMonth();
 }
 

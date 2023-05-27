@@ -10,12 +10,13 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "airbnb-base",
     "prettier",
-    "node",
+    "node"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
+    project: ["tsconfig.json"],
   },
   plugins: ["@typescript-eslint", "prettier", "unused-imports"],
   rules: {
@@ -26,6 +27,7 @@ module.exports = {
         endOfLine: "auto",
       },
     ],
+    "@typescript-eslint/no-unsafe-assignment": "error",
     "no-console": "off",
     "no-control-regex": "off",
     "no-await-in-loop": "off",

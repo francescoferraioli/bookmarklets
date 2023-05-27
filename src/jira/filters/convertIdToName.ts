@@ -6,7 +6,7 @@ export default () => {
   const replaced = textarea.value.replace(
     /filter\s*=\s*(?<id>\d+)/g,
     (...x) => {
-      const { id } = x.reverse()[0];
+      const id = x.reverse()[0].id as string;
       return `filter = "${filters[id]}"`;
     }
   );
