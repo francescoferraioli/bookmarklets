@@ -3,7 +3,7 @@ import {
   getDaysDiffBetweenTwoDates,
 } from "../util/util";
 
-function getDateTimeForTransition(pseudoClass) {
+function getDateTimeForTransition(pseudoClass: string) {
   return document.querySelector<HTMLElement>(
     `table tr:${pseudoClass} td > datetime`
   )!.innerText;
@@ -17,7 +17,7 @@ function getDateTimeLastToDone() {
   return getDateTimeForTransition("last-child");
 }
 
-function parseDateTime(s) {
+function parseDateTime(s: string) {
   return new Date(s);
 }
 
@@ -36,7 +36,7 @@ function getBusinessDaysCycleTime() {
 }
 
 export default () => {
-  const num = document.location!.search!.match(/^\?issueKey=([^&]+)/)![1];
+  const num = document.location.search.match(/^\?issueKey=([^&]+)/)![1];
   const days = getDaysCycleTime();
   const business = getBusinessDaysCycleTime();
 

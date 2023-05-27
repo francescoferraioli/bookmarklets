@@ -1,4 +1,4 @@
-export function clickAllPbiOfStatus(status) {
+export function clickAllPbiOfStatus(status: string) {
   Array.from(
     document.querySelectorAll<HTMLElement>(".jira-issue-status-lozenge")
   )
@@ -11,7 +11,7 @@ export function clickAllPbiOfStatus(status) {
     .forEach((x) => x!.click());
 }
 
-export function selectSprint(sprint) {
+export function selectSprint(sprint: string) {
   const dropdown = $('button[aria-controls="sprintPickerList"]');
 
   if (dropdown.text().includes(sprint)) return false;

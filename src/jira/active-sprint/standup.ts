@@ -1,6 +1,6 @@
 import { clickAllPbiOfStatus } from "./util";
 
-function closeAllOfStatus(status) {
+function closeAllOfStatus(status: string) {
   clickAllPbiOfStatus(status);
 }
 

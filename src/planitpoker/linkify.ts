@@ -1,6 +1,7 @@
-const extractPbiId = (elem) => /^\[(\S+)\] .*$/.exec($(elem).text())![1];
+const extractPbiId = (elem: HTMLElement) =>
+  /^\[(\S+)\] .*$/.exec($(elem).text())![1];
 
-const clickHandler = (elem) => (event) => {
+const clickHandler = (elem: HTMLElement) => (event: MouseEvent) => {
   window.open(`https://numbers.atlassian.net/browse/${extractPbiId(elem)}`);
   event.stopPropagation();
 };

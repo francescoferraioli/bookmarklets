@@ -31,12 +31,12 @@ export function getBusinessDaysDiffBetweenTwoDates(from: Date, to: Date) {
   return days;
 }
 
-export function copyTitle() {
-  navigator.clipboard.writeText(document.title);
+export async function copyTitle() {
+  await navigator.clipboard.writeText(document.title);
 }
 
-export function openOneNote() {
-  navigator.clipboard
+export async function openOneNote() {
+  await navigator.clipboard
     .readText()
     .then((x) => x.split("\n")[0])
     .then((x) => window.open(x));
