@@ -9,6 +9,7 @@
     "generate": "sh scripts/generate.sh",
     "lint": "eslint --ext .ts .",
     "prettify": "prettier **/*.ts --write",
+    "typecheck": "tsc --noEmit",
     "prepare": "husky install"
   },
   "dependencies": {
