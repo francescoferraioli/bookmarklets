@@ -10,12 +10,16 @@ function findNextIndex(state: SwimlaneState[], lastExpandedIndex: number) {
         .includes(status.toLocaleLowerCase())
   );
 }
-export default () => {
-  const state = getState();
+
+export function toggleNext(state: SwimlaneState[]) {
   const lastExpandedIndex =
     state.length - reverse(state).findIndex(({ expanded }) => expanded) - 1;
   let nextIndex = findNextIndex(state, lastExpandedIndex);
-  if (nextIndex === -1) nextIndex = findNextIndex(state, 0);
+  if (nextIndex === -1) nextIndex = findNextIndex(state, -1);
   state.filter(({ expanded }) => expanded).forEach(({ toggle }) => toggle());
   state[nextIndex]?.toggle();
+}
+
+export default () => {
+  toggleNext(getState());
 };
