@@ -5,7 +5,7 @@ function findNextIndex(state: SwimlaneState[], lastExpandedIndex: number) {
   return state.findIndex(
     ({ status }, i) =>
       i > lastExpandedIndex &&
-      ["In Progress", "Blocked", "Other"]
+      ["To Do", "In Progress", "Blocked", "Other"]
         .map((x) => x.toLocaleLowerCase())
         .includes(status.toLocaleLowerCase())
   );
