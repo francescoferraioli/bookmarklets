@@ -51,3 +51,13 @@ export async function wait(timeout: number) {
 export function reverse<T>(arr: T[]): T[] {
   return [...arr].reverse();
 }
+
+export function openLinksInTabs(arr: HTMLAnchorElement[]) {
+  arr.map((x) => x.href).forEach((x) => window.open(x));
+}
+
+export function openLinksInTabsWithSelector(selector: string) {
+  openLinksInTabs(
+    Array.from(document.querySelectorAll<HTMLAnchorElement>(selector))
+  );
+}

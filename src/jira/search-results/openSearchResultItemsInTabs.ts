@@ -1,6 +1,3 @@
-export default () =>
-  Array.from(
-    document.querySelectorAll<HTMLAnchorElement>("#issuetable td.summary a")
-  )
-    .map((x) => x.href)
-    .forEach((x) => window.open(x));
+import { openLinksInTabsWithSelector } from "../../util/util";
+
+export default () => openLinksInTabsWithSelector("#issuetable td.summary a");

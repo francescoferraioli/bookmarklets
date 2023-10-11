@@ -1,9 +1,4 @@
-export default () => {
-  Array.from(
-    document.querySelectorAll<HTMLAnchorElement>(
-      "#commits_bucket a.Link--primary"
-    )
-  )
-    .map((x) => x.href)
-    .forEach((x) => window.open(x));
-};
+import { openLinksInTabsWithSelector } from "../util/util";
+
+export default () =>
+  openLinksInTabsWithSelector("#commits_bucket a.Link--primary");
