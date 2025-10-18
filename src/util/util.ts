@@ -3,6 +3,13 @@ export function getDaysDiffBetweenTwoDates(from: Date, to: Date) {
   return Math.ceil(difference / (1000 * 3600 * 24));
 }
 
+export function changeDomain(newDomain: string) {
+  const currentUrl = window.location.href;
+  const currentDomain = window.location.origin;
+  const newUrl = currentUrl.replace(currentDomain, newDomain);
+  window.location.href = newUrl;
+}
+
 export function getBusinessDaysDiffBetweenTwoDates(from: Date, to: Date) {
   if (to < from) return 0;
 
